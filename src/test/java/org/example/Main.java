@@ -87,11 +87,17 @@ public class Main {
                                 System.out.println("Invalid choice. Please try again.");
                                 break;
                         }
-                    }
+                                  }
 
+                }
+                     case 3:
 
-
-                        }
+                {
+                    System.out.print("Enter the Employee ID to Delete: ");
+                    int   id = sc.nextInt();
+                    sc.nextLine();
+                    db.DeleteEmployee(id);
+                }
                 }
             }
 

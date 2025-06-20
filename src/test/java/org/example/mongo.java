@@ -55,8 +55,18 @@ public class mongo {
 
 
     }
-    public  void FindEmployee(int id, String Empname, String Email, String Skill, String Department, String Joindate)
+    public  void DeleteEmployee(int id)
     {
+        Document doc = Employees.find(eq("Employeeid", id)).first();
+
+        if (doc == null){
+            System.out.println("Account Doesn't  exists.");
+            return;
+        }
+        Employees.deleteMany(eq("Employeeid", id));
+        System.out.println("Employee with ID " + id + " deleted successfully.");
+
+
 
 
 
