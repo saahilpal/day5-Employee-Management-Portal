@@ -37,10 +37,10 @@ public class mongo {
     public void UpdateEmployees(int id, String Empname, String Email, String Skill, String Department) {
         Document doc = Employees.find(eq("Employeeid", id)).first();
 
-            if (doc == null){
-                System.out.println("Account Doesn't  exists.");
+        if (doc == null) {
+            System.out.println("Account Doesn't  exists.");
             return;
-            }
+        }
 
         Employees.updateOne(
                 eq("Employeeid", id),
@@ -48,18 +48,18 @@ public class mongo {
                         .append("Email", Email)
                         .append("Department", Department)
                         .append("Skills", Skill)
-                        )
+                )
         );
 
         System.out.println("Account  details updated ");
 
 
     }
-    public  void DeleteEmployee(int id)
-    {
+
+    public void DeleteEmployee(int id) {
         Document doc = Employees.find(eq("Employeeid", id)).first();
 
-        if (doc == null){
+        if (doc == null) {
             System.out.println("Account Doesn't  exists.");
             return;
         }
@@ -67,12 +67,26 @@ public class mongo {
         System.out.println("Employee with ID " + id + " deleted successfully.");
 
 
+    }
 
+    public void SearchEmployee(int id, String Empname, String Email, String Skill, String Department,String Joindate)
+    {
+        Document doc = Employees.find(eq("Employeeid", id)).first();
+        if (doc ==null)
+        {
+            System.out.println("Account Doesn't exists.");
+            return;
+        }
+        else {
+            System.out.println("ID: " + doc.getInteger("Employeeid"));
+            System.out.println("Empname: " + doc.getString("Empname"));
+            System.out.println("Email: " + doc.getString("Email"));
+            System.out.println("Skill: " + doc.getString("Skill"));
+            System.out.println("Department: " + doc.getString("Department"));
+            System.out.println("Joindate: " + doc.getString("Joindate"));
 
+        }
 
     }
 
-
 }
-
-

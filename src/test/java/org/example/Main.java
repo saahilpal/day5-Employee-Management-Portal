@@ -98,6 +98,18 @@ public class Main {
                     sc.nextLine();
                     db.DeleteEmployee(id);
                 }
+
+                  case 4:
+                  {
+                      System.out.print("Enter the info to Search: ");
+                      int   id = sc.nextInt();
+                      sc.nextLine();
+                      String Empname,
+
+
+
+                      db.SearchEmployee(id,Empname,Email,Skill,Department,Joindate);
+                  }
                 }
             }
 
