@@ -31,7 +31,7 @@ public class Employees {
     }
     public String getDepartment()
     {
-        return Empname;
+        return Department;
     }
     public String getJoindate()
     {
