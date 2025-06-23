@@ -104,12 +104,17 @@ public class Main {
                       System.out.print("Enter the info to Search: ");
                       int   id = sc.nextInt();
                       sc.nextLine();
-                      String Empname,
+                      db.searchEmployee(id);
 
 
 
-                      db.SearchEmployee(id,Empname,Email,Skill,Department,Joindate);
+
                   }
+                case 5 :
+                {
+                    System.out.print("Thank you");
+                    return;
+                }
                 }
             }
 
